@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500..700&display=swap');
+
+
+:root {
+    --dark-cyan: hsl(180, 29%, 50%);
+    --bg-cyan: hsl(180, 52%, 96%);
+    --filter-cyan: hsl(180, 31%, 95%);
+    --dark-gray-cyan: hsl(180, 8%, 52%);
+    --very-dark-cyan: hsl(180, 14%, 20%);
+    --shadow: 0 5px 30px 10px hsl(180deg 37.69% 17.73% / 20%);
+}
+
+body{
+    font-family: 'Spartan', sans-serif;
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: "League Spartan", sans-serif;
+
+}
+
+.header {
+    background-image: url('./images/bg-header-desktop.svg');
+    width: 100%;
+    height: 150px;
+    background-color: var(--dark-cyan);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 2em auto;
+    max-width: 1000px;
+    padding: 1em;
+    box-shadow: var(--shadow);
+}
+
+
+.featured {
+    border-left: 5px solid var(--dark-cyan);
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.details{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.top h2{
+    color: var(--dark-cyan);
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    font-weight: 500;
+}
+.left>h2{
+    color: var(--very-dark-cyan);
+    transition: .2s ease;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+    cursor: pointer;
+    gap: 30px;
+
+}
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left {
+    flex: 1;
+    flex-wrap: wrap;
+
+}
+
+.right {
+    display: flex;
+    /* gap: 10px; */
+    flex-wrap: wrap;
+}
+
+.details p {
+    display: inline-block;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    color: #fff;
+    background-color: var(--dark-cyan);
+    border-radius: 12px;
+}
+.right button:hover{
+    background-color: var(--dark-cyan);
+    color: white;
+    transition: 0.7s ease;
+
+}
+
+.details p:nth-child(2) {
+    background-color: #333;
+}
+.details-list {
+    list-style: none;      
+    display: flex;          
+    gap: 10px;               
+    padding: 0;             
+    margin: 0;               
+}
+
+.details-list li {
+    position: relative;      
+}
+
+.details-list li::after {
+    content: "•";           
+    margin-left: 10px;                   
+}
+
+.details-list li:last-child::after {
+    content: "";             
+}
+
+.right button{
+    background: var(--filter-cyan);
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    padding: 1em;
+    align-self: center;
+    color: var(--dark-cyan);
+    margin: .5em;
+    height: 4em auto;
+    cursor: pointer;
+}
+
+li{
+    margin-right: 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-gray-cyan);
+}
+#filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 2em auto;
+    max-width: 1000px;
+    padding: 1em;
+    box-shadow: var(--shadow);
+}
+
+#selected-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-cyan);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.remove-filter {
+    background-color: var(--dark-cyan);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: pointer;
+    padding: 0 5px;
+    border-radius: 50%;
+}
+
+.remove-filter:hover {
+    color: #fff;
+    background-color: var(--dark-cyan);
+}
+
+#clear-filters {
+    color: var(--dark-cyan);
+    cursor: pointer;
+    font-weight: bold;
+    border: 0px;
+}
+hr{
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .card .info {
+        display: block;
+        width: 100%; 
+    }
+
+    .card .left {
+        order: 1;
+        width: 100%;
+    }
+
+    .card .right {
+        order: 2;
+        width: 100%; 
+        margin-top: 20px;
+    }
+
+    .card .divider {
+        display: block;
+        margin: 20px 0;
+        width: 100%; 
+    }
+    hr {
+        display: block;
+        margin: 1em 0;
+        opacity: .5;
+    }
+}
